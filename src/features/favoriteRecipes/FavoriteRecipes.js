@@ -5,6 +5,7 @@ import {
     removeRecipe,
     selectFilteredFavoriteRecipes,
 } from './favoriteRecipesSlice.js';
+import { addRecipe } from '../allRecipes/allRecipesSlice.js';
 import FavoriteButton from '../../components/FavoriteButton';
 import Recipe from '../../components/Recipe';
 const unfavoriteIconUrl =
@@ -16,6 +17,7 @@ export const FavoriteRecipes = () => {
 
     const onRemoveRecipeHandler = (recipe) => {
         dispatch(removeRecipe(recipe));
+        dispatch(addRecipe(recipe));
     };
 
     return (
